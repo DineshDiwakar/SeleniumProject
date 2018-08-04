@@ -59,7 +59,7 @@ public class TestSuiteRunner {
 			TestScenarioID = ExcelUtils.getCellData(Testcase, Col_TestScenarioID, Sheet_TestCases);
 			RunMode = ExcelUtils.getCellData(Testcase, Col_RunMode,Sheet_TestCases);
 			if (RunMode.equals("Yes")){				
-				
+				System.out.println("The test Script "+TestCaseID+" Execution Started");
 				TestStep = ExcelUtils.getRowNumber(TestCaseID, Col_TestCaseID, Sheet_TestSteps);
 				arrActions = ExcelUtils.getActions(TestStep, Sheet_TestSteps);		
 				Result=true;
@@ -75,6 +75,7 @@ public class TestSuiteRunner {
 				if(Result==true){
 				ExcelUtils.setCellData("PASS",Testcase,Col_Result,Sheet_TestCases);
 				}
+				System.out.println("The test Script "+TestCaseID+" Execution Ended");
 			}
 		}
 	}	
